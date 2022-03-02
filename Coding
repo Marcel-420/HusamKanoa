@@ -1,0 +1,29 @@
+
+#include <stdio.h>
+typedef struct array
+ {
+    size_t capacity;
+    size_t count;
+    float *data;
+ }array_t;
+ 
+ array_t* array_init(array_t *pArray, size_t capacity){ // version 3
+    if (pArray != NULL) {
+        if (capacity != 0){
+            pArray->data = static_cast<float *>(malloc(sizeof(float[capacity])));
+            pArray->count = 0;
+            pArray->capacity = pArray->data != NULL ? capacity : 0;
+        }
+        else{
+            pArray->data = NULL;
+            pArray->count = 0;
+            pArray->capacity = 0;
+        }
+    }
+    return pArray;
+}
+int main() {
+
+
+    return 0;
+}
